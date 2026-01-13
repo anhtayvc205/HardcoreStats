@@ -1,0 +1,9 @@
+name: HardcoreStats
+version: 1.0
+main: me.hardcore.stats.HardcoreStats
+api-version: 1.21
+depend: [DiscordSRV]
+
+commands:
+  stats:
+    description: Gửi Hardcore Stats lên Discord
