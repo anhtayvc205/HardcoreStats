@@ -1,13 +1,13 @@
 package me.hardcore.stats;
 
-import github.scarsz.discordsrv.api.DiscordUtil;
 import org.bukkit.plugin.java.JavaPlugin;
+import github.scarsz.discordsrv.api.DiscordUtil;
 
 public class HardcoreStats extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        DiscordUtil.getApi().subscribe(new DiscordStatsListener());
-        getLogger().info("HardcoreStats hooked into DiscordSRV");
+        DiscordUtil.api.subscribe(new DiscordStatsListener());
+        getLogger().info("HardcoreStats + DiscordSRV enabled");
     }
 }
