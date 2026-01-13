@@ -1,22 +1,18 @@
 package me.hardcore.stats;
 
+import github.scarsz.discordsrv.DiscordSRV;
+import net.dv8tion.jda.api.JDA;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HardcoreStats extends JavaPlugin {
 
-    private static HardcoreStats instance;
-
     @Override
     public void onEnable() {
-        instance = this;
         saveDefaultConfig();
 
-        getCommand("stats").setExecutor(new StatsCommand());
+        JDA jda = DiscordSRV.api.getMainGuild().getJda();
+        DiscordSlashStats.register(jda);
 
-        getLogger().info("HardcoreStats enabled");
-    }
-
-    public static HardcoreStats getInstance() {
-        return instance;
+        getLogger().info("HardcoreStats enabled (Discord Slash)");
     }
 }
